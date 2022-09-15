@@ -89,8 +89,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this3.axios.put("/api/tasks/" + id, {
                   completed: !_this3.tasks.completed
                 }).then(function (response) {
+                  console.log(response);
+
                   _this3.getTasks();
                 })["catch"](function (error) {
+                  console.log(error);
+
                   _this3.getTasks();
                 });
 
@@ -283,7 +287,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.completed {\n  text-decoration: line-through;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.completed {\r\n  text-decoration: line-through;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
