@@ -2172,14 +2172,55 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("main", [_c("nav", {
+    staticClass: "navbar navbar-expand-lg navbar-dark bg-secondary"
+  }, [_c("a", {
+    staticClass: "navbar-brand",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Todo list app")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarColor01"
+    }
+  }, [_c("ul", {
+    staticClass: "navbar-nav mr-auto"
+  }, [_c("li", {
+    staticClass: "nav-item active"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: "/"
+    }
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      "exact-active-class": "active",
+      to: "/list"
+    }
+  }, [_vm._v("Task list")])], 1)])])]), _vm._v(" "), _c("div", [_c("router-view")], 1)]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", [_vm._v("Todo List App")])]);
+  return _c("button", {
+    staticClass: "navbar-toggler",
+    attrs: {
+      type: "button",
+      "data-toggle": "collapse",
+      "data-target": "#navbarColor01",
+      "aria-controls": "navbarColor01",
+      "aria-expanded": "false",
+      "aria-label": "Toggle navigation"
+    }
+  }, [_c("span", {
+    staticClass: "navbar-toggler-icon"
+  })]);
 }];
 render._withStripped = true;
 
@@ -2284,8 +2325,8 @@ var Edit = function Edit() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_task_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/task/Edit.vue */ "./resources/js/components/task/Edit.vue"));
 };
 
-var Show = function Show() {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_task_Show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/task/Show.vue */ "./resources/js/components/task/Show.vue"));
+var List = function List() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_task_List_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/task/List.vue */ "./resources/js/components/task/List.vue"));
 };
 
 var routes = [{
@@ -2301,9 +2342,9 @@ var routes = [{
   component: Edit,
   name: "edit"
 }, {
-  path: "/show/:id",
-  component: Show,
-  name: "show"
+  path: "/list/",
+  component: List,
+  name: "list"
 }];
 
 /***/ }),
@@ -35095,7 +35136,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_task_Create_vue":1,"resources_js_components_task_Edit_vue":1,"resources_js_components_task_Show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Home_vue":1,"resources_js_components_task_Create_vue":1,"resources_js_components_task_Edit_vue":1,"resources_js_components_task_List_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -35302,6 +35343,11 @@ Vue.compile = compileToFunctions;
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
