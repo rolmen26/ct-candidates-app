@@ -1,6 +1,6 @@
-@extends('default')
+@extends('app')
 
-@section('app')
+<!-- @section('app')
 <div id="app">
   <v-card>
     Hello From Laravel and Vue
@@ -24,4 +24,4 @@
             }                
         });
     </script>
-@show
+@show -->
