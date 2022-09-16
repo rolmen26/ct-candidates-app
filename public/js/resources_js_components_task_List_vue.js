@@ -114,6 +114,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.axios.get("/api/tasks/" + this.search).then(function (response) {
         _this4.tasks = response.data;
       })["catch"](function (error) {
+        console.log(error);
         _this4.tasks = [];
       });
     }

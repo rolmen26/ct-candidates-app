@@ -118,6 +118,7 @@ export default {
           this.tasks = response.data;
         })
         .catch((error) => {
+          console.log(error);
           this.tasks = [];
         });
     },
