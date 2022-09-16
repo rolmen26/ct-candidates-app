@@ -26,6 +26,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post("/api/tasks", this.task).then(function (response) {
+        alert(response.data.message);
+
         _this.$router.push({
           name: "list"
         });
@@ -54,7 +56,10 @@ var render = function render() {
   return _c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row",
+    staticStyle: {
+      "margin-top": "30px"
+    }
   }, [_c("div", {
     staticClass: "col-12"
   }, [_c("div", {
@@ -111,7 +116,7 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "col-12"
-  }, [_c("button", {
+  }, [_c("br"), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "submit"

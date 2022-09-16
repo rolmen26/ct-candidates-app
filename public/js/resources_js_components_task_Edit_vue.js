@@ -68,6 +68,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _this2.axios.put("/api/tasks/" + _this2.$route.params.id, _this2.task).then(function (response) {
+                  alert(response.data.message);
+
                   _this2.$router.push("/list");
                 })["catch"]();
 

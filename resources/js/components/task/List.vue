@@ -34,7 +34,7 @@
                   <input
                     type="checkbox"
                     v-model="task.completed"
-                    @change="updatecheck(task.id)"
+                    @change="updatecheck(task.id, task.completed)"
                   />
                   <span :class="[task.completed ? 'completed' : '']">{{
                     task.title
@@ -90,20 +90,20 @@ export default {
       await this.axios
         .delete("/api/tasks/" + id)
         .then((response) => {
+          alert(response.data.message);
           this.getTasks();
         })
         .catch((error) => {
           this.getTasks();
         });
     },
-    async updatecheck(id) {
+    async updatecheck(id, completed) {
       await this.axios
         .put("/api/tasks/" + id, {
-          
-          completed: !this.tasks.completed,
+          completed: completed,
         })
         .then((response) => {
-          console.log(response);
+          alert(response.data.message);
           this.getTasks();
         })
         .catch((error) => {

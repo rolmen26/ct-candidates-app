@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top:30px">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -13,6 +13,7 @@
                                 <input type="text" class="form-control" v-model="task.title">
                             </div>
                             <div class="col-12">
+                                <br/>
                                 <button class="btn btn-primary" type="submit">Create</button>
                             </div>
                         </form>
@@ -37,6 +38,7 @@ export default {
     methods:{
         create() {
             axios.post("/api/tasks", this.task).then(response => {
+                alert(response.data.message);
                 this.$router.push({ name: "list" });
             });
         },

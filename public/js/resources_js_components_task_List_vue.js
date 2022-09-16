@@ -64,6 +64,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context2.next = 2;
                 return _this2.axios["delete"]("/api/tasks/" + id).then(function (response) {
+                  alert(response.data.message);
+
                   _this2.getTasks();
                 })["catch"](function (error) {
                   _this2.getTasks();
@@ -77,7 +79,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    updatecheck: function updatecheck(id) {
+    updatecheck: function updatecheck(id, completed) {
       var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
@@ -87,9 +89,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context3.next = 2;
                 return _this3.axios.put("/api/tasks/" + id, {
-                  completed: !_this3.tasks.completed
+                  completed: completed
                 }).then(function (response) {
-                  console.log(response);
+                  alert(response.data.message);
 
                   _this3.getTasks();
                 })["catch"](function (error) {
@@ -219,7 +221,7 @@ var render = function render() {
             _vm.$set(task, "completed", $$c);
           }
         }, function ($event) {
-          return _vm.updatecheck(task.id);
+          return _vm.updatecheck(task.id, task.completed);
         }]
       }
     }), _vm._v(" "), _c("span", {

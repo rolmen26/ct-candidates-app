@@ -57,6 +57,7 @@ export default {
         this.axios
             .put("/api/tasks/" + this.$route.params.id, this.task)
             .then(response => {
+                alert(response.data.message);
                 this.$router.push("/list");
             })
             .catch();
