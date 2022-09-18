@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
 
 
 Route::resource('tasks', App\Http\Controllers\TaskController::class)->only(

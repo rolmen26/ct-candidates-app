@@ -65,6 +65,13 @@
   
   <script>
 export default {
+  created() {
+    if (localStorage.getItem("token")) {
+      this.getTasks();
+    } else {
+      this.$router.push({ name: "login" });
+    }
+  },
   name: "List",
   data() {
     return {
