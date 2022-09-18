@@ -58,7 +58,7 @@ export default {
         .post("/oauth/token", {
           grant_type: "password",
           client_id: 2,
-          client_secret: "KTOYZi08820np4OhHkRcDY3bCW9CwEv1MQnzbtfA",
+          client_secret: "2BRLsuPjXLoOKXIr6hziXf83cE5t0P4LVeWgJmwK",
           username: this.user.username,
           password: this.user.password,
         })

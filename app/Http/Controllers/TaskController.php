@@ -15,7 +15,7 @@ class TaskController extends Controller
     public function index()
     {
         //
-        return response()->json(Task::all());
+        return response()->json(Task::where('user_id', auth()->user()->id)->get());
     }
 
     /**
@@ -37,7 +37,12 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
-        $task = Task::create($request->post());
+        $task = Task::create([
+            'user_id' => auth()->user()->id,
+            'title' => $request->title,
+            'description' => $request->description,
+            'status' => $request->status,
+        ]);
         return response()->json([
             'message' => 'Task created successfully',
             'task' => $task

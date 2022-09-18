@@ -31,6 +31,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "list"
         });
+      })["catch"](function (error) {
+        alert(error.response.data.message);
       });
     }
   }

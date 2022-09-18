@@ -84,6 +84,8 @@ export default {
   },
   methods: {
     async getTasks() {
+      this.axios.defaults.headers.common["Authorization"] =
+        "Bearer " + localStorage.getItem("access_token");
       await this.axios
         .get("/api/tasks")
         .then((response) => {
