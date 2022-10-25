@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   app:
-    image: kytel0925/php-apache-dev:8
-    container_name: php-apache2-candidates-app
+    image: webdevops/php-apache-dev:8.0
+    container_name: php-ct-candidates-app
     depends_on:
       - database
     restart: unless-stopped
@@ -25,9 +25,9 @@ services:
     tty: true
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=ct_candidates_app
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
     ports:
       - "3305:3306"
     volumes:
